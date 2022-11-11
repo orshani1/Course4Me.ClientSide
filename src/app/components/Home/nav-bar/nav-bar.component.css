@@ -1,0 +1,249 @@
+
+.nav{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    width: 99%;
+    margin: 0;
+    margin-left: -5px;
+    align-items: center;
+    background-color: #151515;
+    z-index: 901;
+}
+.nav-a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+li{
+    list-style: none;
+}
+
+.nav-title{
+    font-size: 25px;
+    font-weight: 600;
+}
+.src-icon{
+    transform: translate(-6px,6px);
+    width: 30px;
+
+}
+.input{
+    transform: translateY(-6px);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 500px;
+}
+.title-icon{
+    transform: translateY(5px);
+    width: 25px;
+}
+.btn{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-weight: 900;
+    cursor: pointer;
+
+}
+.manager{
+    margin-top: 2rem;
+    margin-left:  25rem;
+    width: 1000px;
+    height: 550px;
+}
+
+.t100{
+    
+    transform: translateX(100rem);
+    position: fixed;
+    margin-top: .5rem;
+    display: flex;
+    width: max-content;
+    padding: 20px;
+    font-style: normal;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 1px rgba(15, 15, 15, 0.5);
+  
+}
+.t90{
+    transform: translateX(90rem);
+    position: fixed;
+    margin-top: .5rem;
+    display: flex;
+    width: max-content;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 1px rgba(15, 15, 15, 0.5);
+}
+.nav-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    margin-top: 15rem;
+    color: white;
+    position: fixed;
+    
+}
+.black{
+    background-color: black;
+    color: white;
+    padding: .5rem;
+    margin-right: 1rem;
+    font-weight: 900;
+}
+.menu-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: .5rem;
+    font-weight: 900;
+}
+.text-btn{
+    
+    text-decoration: none;
+    color: black;
+
+    font-weight: 600;
+  
+}
+
+.text-btn:after {
+    display:block;
+    content: '';
+    border-bottom: solid 1px black;  
+    transform: scaleX(0);  
+    transform-origin: 0% 50%;
+    transition: transform 250ms ease-in-out;
+  }
+
+.text-btn:hover::after{
+    transform: scaleX(100%);
+}
+.sh-img{
+    width: 1200px;
+    box-shadow: 0 0 12px 2px rgba(15, 15, 15, 0.5);
+    background-position: -10px;
+}
+.showcase{
+    transform: translateY(2rem);
+    display: flex;
+    margin: 0 auto;
+    height: 600px;
+    width: max-content;
+    justify-self: center;
+    align-self: center;
+    z-index: 1;
+}
+.none{
+    display: none;
+}
+.mobile-nav{
+    width: 100%;
+    height: 250%;
+    position: absolute;
+    background-color: #151515;
+    transform-origin: center right;
+    animation: slideFromLeft 700ms ;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card{
+    position: fixed;
+    left: 80%;
+    top: 70%;
+    padding: 2rem;
+    box-shadow: 0 0 12px 2px rgba(15, 15, 15, 0.5);
+    transform: translateZ(-1);
+    background-color: white;
+    
+}
+.userName{
+    cursor: pointer;
+    font-weight: 900;
+}
+.icon{
+    display: none;
+}
+.left{
+    top: 50%;
+    left: 95%;
+    transform: translateX(79rem);
+}
+.card{
+    font-weight: 900;
+    
+}
+.search{
+    margin-top: 20px;
+    position: fixed;
+    background-color: white;
+    color: black;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin: 0 auto;
+    left:0;
+    right:0;
+    gap:5px;
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.7);
+    width: 40%;
+    z-index: 900;
+
+}
+.p:hover{
+    transform: scale(1.5);
+}
+.white-color{
+    color: white;
+}
+@keyframes slideFromLeft {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@media  (max-width:1000px) 
+{
+  .nav li:not(:first-child){
+display: none;
+  }   
+  .title-icon{ 
+    justify-self: flex-start; 
+  }
+  .nav{
+    position: relative;
+    height: 100px;
+    padding: 20px;
+    width: 100%;
+  }
+  .home{
+    position: absolute;
+    left: 5px;
+  
+  }
+  .icon{
+    display: block;
+    position: absolute;
+    right: 0;
+    
+
+  }
+}

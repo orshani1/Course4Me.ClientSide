@@ -1,0 +1,20 @@
+<div class="container">
+    <h2>Edit Course : {{course.courseName}}</h2>
+    <hr>
+<form #form="ngForm" (ngSubmit)="handleSubmit(form.value)">
+    <div class="form-group">
+        <label for="">Course Name:</label>
+        <input type="text" class="form-control" name="courseName" [(ngModel)]=course.courseName #courseName="ngModel">
+        <label for="">Description:</label>
+        <input type="text" class="form-control" name="description" [(ngModel)]=course.description #description="ngModel">
+        <label for="">Price :</label>
+        <input type="number" class="form-control" name="price" [(ngModel)]=course.price #price="ngModel">
+
+
+        <label for="">Image : </label>
+        <input type="file" (change)="onFileChange($event)" ngModel="file" name="file" #file="ngModel"
+            class="form-control">
+        <button>Submit  Changes</button>
+    </div>
+</form>
+</div>

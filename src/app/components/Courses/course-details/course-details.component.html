@@ -1,0 +1,34 @@
+<div class="container">
+<div class="card mt-5">
+    <h2>{{course.courseName}} Course Details</h2>
+    <p>Course Name : {{course.courseName}}</p>
+    <p>Course Description : {{course.description}}</p>
+    <p>Course Students : {{course.numOfStudents}}</p>
+    <p>Course Price : {{course.price}}</p>
+    <p>Course Rating : {{course.rating}}</p>
+
+
+    <div >
+    
+    
+    <button class="btn btn-success"  (click)="openModal()">Add Rating</button>
+    <button class="btn btn-primary" (click)="handleBuy()">Buy</button>
+    <button class="btn btn-danger"(click)="navigateToEpisodeForm()" *ngIf=isAuthor>Add Episodes</button>
+    <button class="btn btn-info"(click)="navigateToEdit()" *ngIf=isAuthor>Edit</button>
+    </div>
+
+ 
+
+</div>
+<form #f="ngForm" *ngIf="showModal" class="card p-1" (ngSubmit)="addRating(f)">
+    <h2>add New Rating</h2>
+    <input ngModel  name="rate" #rate="ngModel" type="number" min="1" max="5">
+    <button class="btn btn-danger" >Add</button>
+</form>
+
+
+<app-watch-episode [courseId]="courseId"></app-watch-episode>
+
+
+</div>
+

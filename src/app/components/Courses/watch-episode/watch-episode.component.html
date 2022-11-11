@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="grid mt-5">
+        <ul>
+            <li (click)="handleClick($event)"  *ngFor="let i of episodes" >
+                <p> {{i.episodeName}}</p>
+            </li>
+        </ul>
+        <video  width="400" [src]=selected #video controls>
+    
+  
+            Your browser does not support HTML video.
+          </video>
+    </div>
+</div>

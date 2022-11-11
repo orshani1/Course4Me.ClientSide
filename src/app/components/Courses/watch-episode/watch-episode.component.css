@@ -1,0 +1,28 @@
+.grid{
+    display: grid;
+    grid-template-columns: 200px 600px;
+    border-left: 3px solid black;
+    border-image: 
+    linear-gradient(
+      to bottom, 
+      rgb(0, 0, 0), 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+    
+}
+video{
+    width: 900px;
+}
+li{
+    list-style: none;
+    cursor: pointer;
+}
+p{
+    cursor: pointer;
+}
+@media (max-width:1000px) 
+{
+    video{
+        width: 150px;
+    }    
+}

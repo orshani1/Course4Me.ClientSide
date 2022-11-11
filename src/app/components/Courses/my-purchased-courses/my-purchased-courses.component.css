@@ -1,0 +1,63 @@
+.container{
+    margin: 0 auto;
+}
+
+.flex{
+   margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.card{
+    height: 400px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 40px;
+}
+.courseImg{
+    width: 250px;
+}
+.img{
+    width: 20px;
+}
+.small{
+    width: 250px;
+    height: 250px;
+    
+}
+@media (max-width:1000px){
+    .img{
+        width: 10px;
+        
+    }
+    img{
+        width: 150px;
+    }
+    .card{
+        width: fit-content;
+        flex-direction: column;
+        height: 600px;
+    }
+    .grid{
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    h2{
+        font-size: 10px;
+    }
+    hr{
+        display: none;
+    }
+}

@@ -1,0 +1,67 @@
+
+
+<div class="mobile-nav" *ngIf="isMobileNav">
+    <div class="nav-container">
+<ul (click)="closeNav()">
+    <li>
+        <a class="nav-a" href="/home" routerLink="/home">Home</a> 
+    </li>
+        <li>
+            <a class="nav-a">About Us</a>
+        </li>
+        <li>
+            <a class="nav-a" href="/instructor-all-courses" routerLink="/instructor-all-courses">Teach with us </a>
+        </li>
+        <li>
+            <a href="/my-learnings"  class="nav-a" routerLink="/my-learnings">
+                My Learnings
+            </a>
+        </li>
+        <li>
+            <a>
+                User Settings
+            </a>
+        </li>
+</ul>
+</div>
+</div>
+
+<ul class="nav" >
+    <li class="home"><a class="nav-a" href="/home" routerLink="/home"><strong class="nav-title"><img class="title-icon" src="./../../../../assets/icons/icons8-book-16.png" alt=""> Course4Me</strong></a></li>
+    <li><a ngModel #categories class="nav-a" href="">Categories</a></li>
+    <li><img class="src-icon" src="./../../../../assets/icons/icons8-search-in-list-100.png" alt=""> <input type="text" placeholder="Search For anything" #text="ngModel" value="Search for anything"  ngModel (keyup)="handleSearch(text)" class="input"></li>
+    <li><a   id="teach" ngModel #teachWithUs class="nav-a"  routerLink="/instructor-all-courses" href="/instructor-all-courses">Teach With Us</a></li>
+    <li><a class="nav-a" href="/my-learnings" routerLink="/my-learnings">My Learnings</a></li>
+    <img src="../../../../assets/icons/menu2.png" class="icon" (click)="showMobileNav()" alt="">
+    <li><button #userBtn ngModel id="user" class="btn btn-light" (mouseenter)="handleHover('user')" >OS</button></li>
+
+</ul>
+
+<div class="userMenu" (mouseleave)="toggleShowMenu()" [className]="userMenuX < 1800 ? 't90':'t100'" *ngIf="isShowUserMenu"> 
+    <ul class="userMenuDrop">
+        <li>
+            <a class="btn black white-color">OS</a>
+            <a class="userName">Or Shani</a>
+            <p class="email">ortheog@gmail.com</p>
+            
+        </li>
+        <hr>
+        <div class="menu-btn">
+       
+
+        <li><a href="" class="text-btn">Teach With Us</a></li>
+        <li><a href=""class="text-btn">My Learnings</a></li>
+
+        <li><a href=""class="text-btn">Account Settings</a></li>
+     
+    </div>
+    </ul>
+</div>
+
+<div class="search" *ngIf="isShowSearch">
+    <p style="cursor: pointer;" class="p" (click)="exitSearch()">X</p>
+    <p style="cursor: pointer;" class="p" *ngFor="let i of searchValues" (click)="handleClick(i)">{{i}}</p>
+</div>
+
+
+

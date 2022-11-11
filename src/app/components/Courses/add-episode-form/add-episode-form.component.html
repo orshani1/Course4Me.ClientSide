@@ -1,0 +1,18 @@
+<div class="container p-5 mt-5">
+<form  #f="ngForm" (ngSubmit)="handleSubmit(f.value)">
+    <div class="container gap">
+    <label  for=""><span class="label label-success">Episode Name</span> </label>
+    <input class="form-control" name="episodeName"  type="text" ngModel="episodeName" #episodeName="ngModel" >
+    <label class="label label-success" for=""><span class="label label-success">Description</span></label>
+    <input class="form-control" type="text" ngModel="description" name="description" #description="ngModel" >
+
+    <label class="label label-success" for=""><span class="label label-success">Number Of Order</span></label>
+    <input class="form-control" type="number" ngModel="numberOfOrder" name="numberOfOrder" #numberOfOrder="ngModel" >
+    <p> <span style="color: gray;" class="label label-success">this field is for the system to understand which episode is first and which last</span></p>
+    <input type="file" (change)="handleFileChange($event)" class="form-control" ngModel="video" #video="ngModel" name="video">
+
+     
+    <button class="btn btn-primary">Submit</button>
+</div>
+</form>
+</div>

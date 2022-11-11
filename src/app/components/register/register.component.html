@@ -1,0 +1,35 @@
+<div class="container">
+<form class="card" #f="ngForm" (ngSubmit)="handleRegister(f)">
+
+    <div class="content" >
+    <label for="email">Email :</label>
+    <input 
+     type="text"
+     class="form-control" 
+     name="email" 
+     ngModel="email" 
+     #email="ngModel"
+     required
+     pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}">
+     <div *ngIf="email.touched && email.invalid">
+        <p class="error">Invalid Email</p>
+    </div>
+    <label for="password">Password :</label>
+    <input 
+    type="text"
+    class="form-control" 
+    name="password" 
+    ngModel="password" 
+    #password="ngModel"
+    required
+    pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$">
+    <div *ngIf="password.touched && password.invalid">
+        <p class="error" style="width: content-fit;">Invalid Password , password must answer all this conditions : 8 char longs ONLY !,2 Upper case char,1 special symbol , 2 numbers , 3 lowercase numbers</p>
+    </div>
+    <label for="profile">Upload Profile Image: </label>
+    <input type="file"  class="form-control" (change)="handleFileChange($event)" #ProfileImageId="ngModel" ngModel="profileImageId">
+    <button class="btn btn-success" [disabled]="f.invalid">Register</button>
+</div>
+</form>
+
+</div>

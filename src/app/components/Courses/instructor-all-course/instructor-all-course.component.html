@@ -1,0 +1,115 @@
+<div class="container mw-100">
+<h2>Your Published Courses : </h2>
+<hr>
+
+<a routerLink="/add-course" href="/add-course">Add New </a>
+<div *ngIf="isData">
+    <button  (click)="showNext()">Next</button>
+    <button  (click)="goBack()">Reset</button>
+    <div class="cards-container " #courses id="courses">
+        
+    <div *ngFor="let i of instructorCourses">
+        <div class="card" (click)="handleClick(i.id)">
+        <p></p>
+        <img [src]=i.image class="courseImg" alt="">
+        <p>Name : {{i.courseName}}</p>
+        <p>Description : {{i.description}}</p>
+        <p>Price : {{i.price}}</p>
+        <p>Category : {{i.tempCategory}}</p>
+        <p>Students Icon Here ..  : {{i.numOfStudents}}</p>
+        <p>Language : {{i.tempLanguage}}</p>
+        <p>Rating: </p>
+        <div *ngIf="i.rating >=252" class="rating-container">
+            <div class="flex">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+            </div>
+        </div>
+        <div *ngIf="i.rating >= 124  && i.rating < 252">
+            <div class="flex">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+            </div>
+        </div>
+        <div *ngIf="i.rating >= 40 && i.rating < 124">
+            <div class="flex">
+        
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+            </div>
+        </div>
+        <div *ngIf="i.rating >= 33 && i.rating < 40">
+            <div class="flex">
+        
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+            </div>
+        </div>
+        <div *ngIf="i.rating >= 29 && i.rating <33">
+            <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+        
+        </div>
+    </div>
+    </div>
+
+ 
+    
+</div>
+
+    
+
+
+</div>
+<div class="column " *ngIf="isData">
+    <div>
+        <h2>Table View</h2>
+        <hr>
+        <div class="flex">
+            <label >Enter Field to filter :</label>
+            <input id="filter" type="text" placeholder="name,rating,price..." [(ngModel)]="filterKey">
+            <img src="./../../../../assets/icons/icons8-up-arrow-96.png" class="arrow" alt="" (click)="handleFilter('asc')">
+            <img src="./../../../../assets/icons/icons8-up-arrow-96.png" class="arrow r-180" alt=""(click)="handleFilter('desc')" > 
+        </div>
+        <table class="table table-bordered table-dark ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Students</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of instructorCourses">
+                    <td>{{i.id}}</td>
+                    <td>{{i.courseName}}</td>
+                    <td>{{i.price}}</td>
+                    <td>{{i.tempCategory}}</td>
+                    <td>{{i.numOfStudents}}</td>
+                    <td>{{i.rating}}</td>
+
+
+
+
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div *ngIf="!isData">
+    <p>You dont have courses you created yet ... </p>
+    
+</div>
+
+</div>

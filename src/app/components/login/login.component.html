@@ -1,0 +1,11 @@
+<div class="card">
+<form #f="ngForm" (ngSubmit)="handleSubmit(f)">
+    <div class="form-container">
+    <h2>Hi , Please Login</h2>
+    <input type="text" name="username"class="form-control" ngModel #username="ngModel">
+    <input type="text" name="password"class="form-control" ngModel #password="ngModel">
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button class="btn btn-warning" (click)="handleRegister()">Register</button>
+</div>
+</form>
+</div>

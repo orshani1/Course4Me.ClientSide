@@ -1,0 +1,79 @@
+<div class="container">
+    <h2 *ngIf="!noCourse">Your Learnings :</h2>
+    <hr>
+
+    <h3 *ngIf="noCourse" style="padding-bottom: 150px;padding-top:150px;">No Courses yet You can scroll below To search
+        new courses</h3>
+
+    <div class="flex">
+
+        <div class="grid" *ngIf="courses">
+            <div *ngFor="let c of courses">
+                <div class="card" (click)="handleDetail(c.id)">
+                    <img [src]=c.image class="card-img-top small">
+                    <div class="card-body">
+                        <p class="card-title">Name : {{c.courseName}}</p>
+                        <div class="card-text">
+                            <p>Description : {{c.description}}</p>
+                            <p>Language : {{c.tempLanguage}}</p>
+                            <p>Category : {{c.tempCategory}}</p>
+                            <p>Students : {{c.numOfStudents}}</p>
+                            <p>Price : {{c.price}}</p>
+                            <p>Rating :</p>
+                            <div *ngIf="c.rating >=252" class="rating-container">
+                                <div class="flex">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                </div>
+                            </div>
+                            <div *ngIf="c.rating >= 124  && c.rating < 252">
+                                <div class="flex">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                </div>
+                            </div>
+                            <div *ngIf="c.rating >= 40 && c.rating < 124">
+                                <div class="flex">
+
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                </div>
+                            </div>
+                            <div *ngIf="c.rating >= 33 && c.rating < 40">
+                                <div class="flex">
+
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                    <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                </div>
+                            </div>
+                            <div *ngIf="c.rating >= 29 && c.rating <33">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="no-courses" *ngIf="!courses || courses == null || undefined">
+            <p>No Courses Yet</p>
+            <app-start-learning></app-start-learning>
+        </div>
+    </div>
+
+</div>
+<div *ngIf="courses">
+
+
+
+    <app-start-learning></app-start-learning>
+</div>

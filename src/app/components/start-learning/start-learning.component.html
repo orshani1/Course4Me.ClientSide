@@ -1,0 +1,62 @@
+<div class="container">
+    <h3>Start Learning here . </h3>
+    <div class="gap">
+        <div *ngFor="let i of coursesArray">
+            <div class="card padding" (click)="handleBuy(i.id)">
+                <img [src]=i.image class="card-img-top small" alt="">
+                <div class="card-body">
+                    <p class="card-title">courseName : {{i.courseName}}</p>
+                    <div class="card-text">
+                        <p>Category : {{i.tempCategory}}</p>
+                        <p>Description : {{i.description}}</p>
+                        <p>Language : {{i.tempLanguage}}</p>
+                        <p>Students : {{i.numOfStudents}}</p>
+                        <p>Price : ${{i.price}}</p>
+                        <p>Rating : </p>
+                        <div *ngIf="!i.rating">
+                            <p>No Rating yet</p>
+                        </div>
+                        <div *ngIf="i.rating >=252" class="rating-container">
+                            <div class="flex">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                            </div>
+                        </div>
+                        <div *ngIf="i.rating >= 124  && i.rating < 252">
+                            <div class="flex">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                            </div>
+                        </div>
+                        <div *ngIf="i.rating >= 40 && i.rating < 124">
+                            <div class="flex">
+
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                            </div>
+                        </div>
+                        <div *ngIf="i.rating >= 33 && i.rating < 40">
+                            <div class="flex">
+
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                                <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+                            </div>
+                        </div>
+                        <div *ngIf="i.rating >= 29 && i.rating <33">
+                            <img src="../../../assets/transparent-star-image-19.png" alt="" class="img">
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
