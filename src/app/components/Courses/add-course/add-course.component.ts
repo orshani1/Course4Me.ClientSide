@@ -28,8 +28,10 @@ export class AddCourseComponent implements OnInit {
    
     
 
+
     this._http.postCourse(form,userId).subscribe(res=>{
       
+      alert(userId);
       this._http.addCourseImage(this.file,res).subscribe(res2=>{
           this._router.navigateByUrl(`add-episode/${res}`);
       });
